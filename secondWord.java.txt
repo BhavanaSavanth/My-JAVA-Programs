@@ -1,0 +1,40 @@
+import java.io.*;
+import  java.util.*;
+
+class UserMainCode
+{
+
+    public static String output1;
+	    
+		
+    public static void secondWordUpperCase(String input1){
+        //Write code here
+		int i=0;
+		int j=0;int count=0;String s=new String();
+		input1=input1.trim();
+		input1=input1.replaceAll("\\s+"," ");
+		for(i=0;i<input1.length();i++)
+		{
+			if(input1.charAt(i)==' '){
+				count++;
+			}
+		}
+		if(count==0){
+			output1="LESS";
+		}
+		else if(count==1){
+			i=input1.indexOf(' ');
+			for(j=i+1;j<input1.length();j++)
+			{
+				s+=input1.charAt(j);
+			}
+		}
+		else{
+			i=input1.indexOf(' ');
+			j=input1.indexOf(' ',i+1);
+			s=input1.substring(i+1,j);
+			output1=s.toUpperCase();
+			
+		}
+    }	
+}
